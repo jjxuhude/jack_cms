@@ -1,5 +1,5 @@
 {
-    "name": "magento/module-jack-cms",
+    "name": "jjxuhuade/module-jack-cms",
     "description": "N/A",
     "require": {
         "php": "~5.5.0|~5.6.0|~7.0.0",
