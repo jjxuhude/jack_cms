@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-empty" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <remove src="extjs/resources/css/ext-all.css"/>
+        <remove src="extjs/resources/css/ytheme-magento.css"/>
+        <remove src="jquery/jstree/themes/default/style.css"/>
+        <remove src="css/styles-old.css"/>
+        <remove src="css/styles.css"/>
+        <remove src="Image_LazyLoading/js/resource/lazysizes/lazySizesConfig.js"/>
+        <remove src="Image_LazyLoading/js/resource/lazysizes/lazysizes.min.js"/>
+        <remove src="Image_LazyLoading/js/resource/lazysizes/ls.attrchange.min.js"/>
+        <remove src="requirejs/require.js"/>
+        <css src="Jack_Cms::lib/app/index.css"/>
+        <css src="Jack_Cms::icon/iconfont.css"/>
+        <css src="Jack_Cms::css/bootstrap.min.css"/>
+        <css src="Jack_Cms::css/swiper.min.css"/>
+        <css src="Jack_Cms::css/cms.css"/>
+        <script src="Jack_Cms::lib/app.js"/>
+        <script src="Jack_Cms::lib/jquery.validate.min.js"/>
+    </head>
+    <body>
+        <referenceContainer name="header" remove="true"/>
+        <referenceContainer name="notices.wrapper" remove="true"/>
+        <referenceContainer name="menu.wrapper" remove="true"/>
+        <referenceContainer name="content">
+            <block class="Jack\Cms\Block\Adminhtml\Page\Edit\Renderer\Content" name="cms.content">
+            </block>
+        </referenceContainer>
+    </body>
+
+</page>

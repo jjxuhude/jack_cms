@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<components xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Jack_Cms:etc/ui_definition.xsd">
+    <jack class="Magento\Ui\Component\Form\Element\Jack" component="Jack_Cms/js/form/element/jack" template="ui/form/field" />
+    <jjxuhuade class="Jack\Cms\Component\Jjxuhuade" component="Jack_Cms/js/form/element/jjxuhuade" template="ui/form/field" />
+</components>

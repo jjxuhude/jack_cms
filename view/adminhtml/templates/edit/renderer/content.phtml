@@ -1,0 +1,35 @@
+<div id="app">
+    <div style="display: flex;justify-content: left;">
+        <ul class="btns" style="display: flex;justify-content: start;flex: 4">
+            <li class="cms-menu md-icon md-icon-font md-theme-demo-light menu el-icon-menu"  @click="showMenu" ></li>
+        </ul>
+        <ul class="media-type" style="display: flex;justify-content: left;flex: 3">
+            <li :class="mediaType=='h5'?'li-h5':''"><span class=" el-icon-mobile-phone"  @click="switchMedia($event,'h5')"></span></li>
+            <li :class="mediaType=='pc'?'li-pc':''"><span class=" el-icon-s-platform"  @click="switchMedia($event,'pc')"></span></li>
+            <li :class="mediaType=='wechat'?'li-wechat':''" style="margin-left:0px;"><span class="iconfont icon-weixin2"  @click="bbb()"></span></li>
+        </ul>
+        <ul class="btns" style="display: flex;justify-content: right;flex: 2">
+            <li><span class="button"  @click="dialogVisible = true;getData();">JSON</span></li>
+            <li><span class="button submitFm">SAVE</span></li>
+        </ul>
+    </div>
+    <el-form ref="form"   method="post" action="/jack_cms/page/save" enctype="multipart/form-data" label-width="80px" >
+
+        <table class="table table-bordered" style="display: none;">
+            <tr>
+                <td>ID:</td><td><input name="page_id" v-model="id" readonly/></td>
+                <td>标题:</td><td><input name="title" v-model="title"/></td>
+            </tr>
+        </table>
+        <custom-clone v-if="true"
+                      type="h5"
+                      api_domain=""
+                      oss_domain=""
+                      :title="title"
+                      :not_use_tags="[]"
+        ></custom-clone>
+    </el-form>
+</div>
+<?php require_once './js/app.js.php';?>
+</body>
+</html>

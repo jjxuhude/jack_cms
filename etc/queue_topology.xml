@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue_topology.xsd">
+    <!-- name : 指定的交换机名字  -->
+    <!-- type : 写为topic即可 -->
+    <!-- connection: 这里我们是链接mq，所以填 amqp，如果是数据库的话，就填 db -->
+    <exchange name="magento2.customer" type="topic" connection="amqp">
+        <!-- id: 交换机和主题、路由绑定的唯一id -->
+        <!-- topic: 和communication.xml中的topic值一致 -->
+        <!-- destinationType: 这里就填queue即可 -->
+        <!-- destination: 标识队列的名称，和topic一致即可 -->
+        <binding id="magento2.customer" topic="magento2.customer" destinationType="queue" destination="测试amqp"/>
+    </exchange>
+</config>

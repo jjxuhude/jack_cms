@@ -1,0 +1,68 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<textarea class="admin__control-jack jack" data-bind="
+    value: value,
+    valueUpdate: valueUpdate,
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        cols: cols,
+        rows: rows,
+        'aria-describedby': noticeId,
+        placeholder: placeholder,
+        id: uid,
+        disabled: disabled
+    }"
+/>
+<textarea data-bind="value:getName(label)"></textarea>
+
+<ul>
+    <li repeat="foreach: deps, item: '$item'"  text="$item"> </li>
+</ul>
+<ul class="action-submenu" each="deps">
+    <li text="$data">
+    </li>
+</ul>
+
+UID:<font color="red" text="uid"></font>
+<ul each="users">
+    <li text="name" data-bind="value:$index"></li>
+</ul>
+<p>
+    <button click="addUser">添加111</button>
+    <button click="removeUser">删除222</button>
+    <button click="userRemoveIndex.bind($data,2)">userRemoveIndex333</button>
+
+</p>
+
+<textarea cols="80" rows="5" text="JSON.stringify(users)" if="users.length>10"></textarea>
+<each args="data: testElems, as: 'element'">
+<p text="element"></p>
+<render args="element" />
+</each>
+<render args="template6"/>
+
+
+
+
+<!--<each args="getRegion('dataGridFilters')" render=" $data.stickyTmpl || getTemplate()"/>-->
+<!--<scope args="requestChild('listing_filters_chips')" render="$data.stickyTmpl || getTemplate()"/>-->
+<!--<render args="elementTmpl" ifnot="hasAddons()"/>-->
+<!--<render args="elementTmpl" ifnot="hasAddons()"/>-->
+<!--<render args="tooltipTpl" if="$data.tooltip"/>-->
+<!--<render args="tooltipTpl" if="$data.tooltip"/>-->
+<!--<render args="tooltipTpl" if="$data.tooltip"/>-->
+<!--<fieldset-->
+<!--if="opened() || _wasOpened || initializeFieldsetDataByDefault"-->
+<!--class="admin__fieldset"-->
+<!--each="data: elems, as: 'element'" render=""/>-->
+<!--<render args="$data.service.template" if="$data.hasService()"/>-->
+<!--<div each="getRegion('button')" render=""/>-->
+<!--<render args="typeSelectorTemplate"/>-->
+<!--<each args="data: value, as: '$file'" render="$parent.getPreviewTmpl($file)"/>-->
+<!--<each args="data: value, as: '$file'" render="$parent.getPreviewTmpl($file)"/>-->

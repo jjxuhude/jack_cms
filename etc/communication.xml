@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+    <topic name="magento2.customer" request="string" >
+        <handler name="magento2CustomerHandle" type="Jack\Cms\Amqp\RequestHandler" method="process"/>
+    </topic>
+</config>

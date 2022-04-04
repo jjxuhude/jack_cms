@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue_publisher.xsd">
+    <!-- topic: 和上面topic一致-->
+    <publisher topic="magento2.customer">
+        <!-- name: 对于AMQP连接，连接名必须与queue_topology.xml文件中的连接属性匹配。否则，连接名必须是db -->
+        <!-- exchange: 和queue_topology.xml里面的exchange name一致 -->
+        <connection name="amqp" exchange="magento2.customer" />
+    </publisher>
+</config>

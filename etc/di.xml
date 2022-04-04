@@ -1,0 +1,67 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Admin theme. Start -->
+    <type name="Magento\Theme\Model\View\Design">
+        <arguments>
+            <argument name="themes" xsi:type="array">
+                <item name="adminhtml" xsi:type="string">Magento/jack</item> <!-- Example: "Magento/backend" -->
+            </argument>
+        </arguments>
+    </type>
+    <!-- Admin theme. End -->
+
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="commandexample_somecommand" xsi:type="object">Jack\Cms\Console\Command\SomeCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="command_product_sku" xsi:type="object">Jack\Cms\Console\Command\Sku</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="command_test" xsi:type="object">Jack\Cms\Console\Command\Test</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="publish-message" xsi:type="object">Jack\Cms\Console\Command\PublishCommand</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Ui\Config\Reader\Definition\SchemaLocator">
+        <arguments>
+            <argument name="schema" xsi:type="string">urn:magento:module:Jack_Cms:etc/ui_template.xsd</argument>
+        </arguments>
+    </type>
+
+    <preference for="Magento\Ui\Config\Reader\Definition\SchemaLocator" type="Jack\Cms\Config\SchemaLocator"/>
+
+
+    <!--<type name="Magento\Framework\MessageQueue\MergerFactory">-->
+        <!--<arguments>-->
+            <!--<argument name="mergers" xsi:type="array">-->
+                <!--<item name="magento2.customer" xsi:type="string">Custom\Cms\Amqp\Consumer</item>-->
+            <!--</argument>-->
+        <!--</arguments>-->
+    <!--</type>-->
+
+
+    <!--<type name="Magento\Customer\Api\Data\CustomerInterface">-->
+        <!--<plugin name="CustomerExtensionAttributeOperations" type="Custom\Cms\Plugin\CustomerAttributeLoad"/>-->
+    <!--</type>-->
+
+
+</config>
